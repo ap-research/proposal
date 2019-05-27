@@ -1,0 +1,52 @@
+\documentclass[11pt, letterpaper]{article}
+%\documentclass[letterpaper,natbib]{apa6}
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[autostyle, english=american]{csquotes}
+\MakeOuterQuote{"}
+\usepackage[hidelinks, colorlinks=false, allcolors=blue, bookmarks, bookmarksdepth=2]{hyperref}
+\usepackage{bookmark}
+%Set no indentation. 
+%Set one blank link between paragraphs.
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+%Set the numbering at the chapter level (i.e., sections and subsections will be unnumbered)
+%We could use \section* to have unnumbered sections, but this will prevent sectons from showing up in the PDF bookmarks (as set up in the options for the hyperref package)
+\setcounter{secnumdepth}{0}
+
+%Import the natbib package and sets a bibliography  and citation styles
+%\usepackage[natbibapa]{apacite}
+%\usepackage{natbib}
+%\setcitestyle{authoryear,open={(},close={)}}
+
+%Generate references using biblatex package with biber backend.
+%natbib=true (allows for natbib citation commands)
+\usepackage[style=apa, backend=biber, eprint=false, natbib=true]{biblatex}
+\DeclareLanguageMapping{english}{american-apa}
+\addbibresource{refs.bib}
+
+\title{Research Proposal Guidelines}
+\author{AP Research}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\input{proposal}
+
+%\bibliographystyle{apacite}
+%\bibliography{refs}
+\addcontentsline{toc}{section}{\refname}
+\printbibliography
+
+\end{document}
